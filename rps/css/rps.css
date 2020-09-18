@@ -1,0 +1,76 @@
+
+/* CSS classes controlled by JS:
+  #AI-player.reveal: Reveal AI choices early, controlled by checkbox.
+  #AI-player .hand-container.chosen: This hand is the AI player's next choice.
+  .hand-container.selected: This was the hand selected (played) most recently.
+*/
+
+#choices {
+  position: relative;
+}
+.player-title, .probability {
+  width: 100%;
+  text-align: center;
+}
+#probabilities {
+  height: 30px;
+}
+#probabilities-row {
+  display: none;
+}
+#winner {
+  height: 150px;
+}
+#winner.ready {
+  color: gray;
+}
+#winner-message {
+  position: relative;
+  top: 25px;
+  text-align: center;
+  font-size: 60px;
+}
+.choice, .hand-container, .hand-img, .hand-background-img, .hand-selected-img {
+  height: 250px;
+  width: 250px;
+}
+.hand-container {
+  position: relative;
+  margin: auto;
+}
+.hand-background-img, .hand-selected-img {
+  display: none;
+  z-index: 30;
+  left: 0px;
+  top: 0px;
+}
+#human-player .hand-container:hover > .hand-background-img {
+  display: block;
+}
+#AI-player.reveal .hand-container.chosen > .hand-background-img {
+  display: block;
+}
+
+#human-player .hand-container.selected > img {
+  top: 30px;
+}
+#AI-player .hand-container.selected > img {
+  top: -30px;
+}
+.hand-container.selected > .hand-selected-img {
+  display: block;
+}
+
+.hand-img {
+  z-index: 10;
+}
+.hand-img, .hand-background-img, .hand-selected-img {
+  position: absolute;
+}
+
+#AI-player .hand-img {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+}

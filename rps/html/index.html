@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <link rel="icon" href="../public/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  <!-- TODO: Below 1st-CLaaS link is not properly versioned -->
+  <script src="https://cdn.jsdelivr.net/gh/stevehoover/1st-CLaaS/framework/client/js/fpgaServer.js"></script>
+  <script src="../../node_modules/estimator_lib/js/estimator.js"></script>
+  <script src="../../node_modules/estimator_lib/js/premonition.js"></script>
+  <script src="../js/rps.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/rps.css">
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <div id="body">
+    <p>Copyright © ThroughPuter, Inc. Patents issued and pending. All rights reserved. Contact: <a href="tech@throughputer.com">tech@throughputer.com</a></p>
+    <h1>Rock-Paper-Scissors Demo</h1>
+    <div id="instructions">
+      <p>The demo game uses the ThroughPuter hardware-accelerated Estimator microservice to predict your behavior. See how predictable you are.</p>
+      <p>Click a hand to play.</p>
+    </div>
+    <div id="controls">
+      <input type="checkbox" id="reveal" name="secrecy" value="reveal" /><label for="reveal">Reveal AI Play</label>
+    </div>
+    <div id="scoreboard">
+      <h2>Score: You: <span id="human-score" class="score">0</span> AI: <span id="ai-score" class="score">0</span></h2>
+    </div>
+    <div class="row">
+      <h2 class="player-title">Human</h2>
+    </div>
+    <div v-for="player in players" v-bind:id="player.name + '-player'" class="player">
+      <div v-bind:id="player.name + '-choices'" class="row">
+        <div v-for="hand in hands" class="col-sm-4 choice">
+          <div class="hand-container" v-bind:id="player.name + '-' + hand.name + '-hand'" v-bind:data-hand-index="hand.index">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNUcGiQBAACYwD7IEEwAgAAAABJRU5ErkJggg==" class="hand-background-img"></img>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNc4ODgAwAEFgFuZp/v2QAAAABJRU5ErkJggg==" class="hand-selected-img"></img>
+            <img v-bind:src="'../public/' + hand.name + '.png'" class="hand-img"></img>
+          </div>
+        </div>
+      </div>
+      <div v-if="player.name == 'human'" id="winner" v-bind:class="ready ? 'ready' : ''">
+        <p id="winner-message"></p>
+      </div>
+    </div>
+    <div class="row" id="probabilities-row">
+      <div v-for="hand in hands" class="col-sm-4" id="probabilities">
+        <p class="probability" v-bind:index="hand.index"></p>
+      </div>
+    </div>
+    <div class="row">
+      <h2 class="player-title">AI</h2>
+    </div>
+    <p>Copyright © ThroughPuter, Inc. Patents issued and pending. All rights reserved. Contact: <a href="tech@throughputer.com">tech@throughputer.com</a></p>
+  </div>
+</body>
+</html>
