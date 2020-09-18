@@ -2,7 +2,7 @@
 // A Rock-Paper-Scissors demo game.
 
 class RPS extends Vue {
-  constructor(arg, ws) {
+  constructor(arg) {
     super(arg);
 
     this.estimator_ws = `wss://estimatorlab.com/ws/<your-key-here>`;
