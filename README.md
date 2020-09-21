@@ -8,7 +8,7 @@ This package use npm (Node.js Package Manager). With npm installed, run `npm ins
 
 ## Rock-Paper-Scissors
 
-### Ruuing the Demo
+### Running the Demo
 
 A live version of this demo can be found [here](https://www.estimatorlab.com).
 
