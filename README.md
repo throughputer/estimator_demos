@@ -1,6 +1,6 @@
 # Throughputer Inc. Estimator Microservice Demo Applications
 
-Demo applications utilizing the [Throughputer Inc.](https://www.throughputer.com) [Estimator microservice](https://www.estimatorlab.com).
+Demo applications utilizing the [Throughputer Inc.](http://www.throughputer.com) [Estimator microservice](https://www.estimatorlab.com).
 
 ## Installation
 
@@ -16,4 +16,4 @@ To run the demo locally, simply open the `index.html` file in your web browser (
 
 ## Connecting the Estimator Microservice
 
-The Estimator URL with access key is specified near the top of `js/rps.js`. (See [Estimator API](https://github.com/throughputer/estimator_lib/README.md) for more info about the access key.)
+The Estimator URL with access key is specified near the top of `js/rps.js`. (See [Estimator API](https://github.com/throughputer/estimator_lib) for more info about the access key.)
