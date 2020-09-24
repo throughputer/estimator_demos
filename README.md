@@ -1,4 +1,4 @@
-# Throughputer Inc. Estimator Microservice Demo Applications
+# ThroughPuter, Inc. Estimator Microservice Demo Applications
 
 Demo applications utilizing the [Throughputer Inc.](http://www.throughputer.com) [Estimator microservice](https://www.estimatorlab.com).
 
