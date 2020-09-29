@@ -5,13 +5,16 @@ class RPS extends Vue {
   constructor(arg) {
     super(arg);
 
-    this.estimator_ws = `wss://estimatorlab.com/ws/<your-key-here>`;
+    // To utilize your access to a ThroughPuter Estimator microservice, provide your secret key here, HOWEVER...
+    // IMPORTANT!!! It is your responsibility to keep your secret key secret. This code is visible in a user's web browser,
+    //              and this demo is not intended to be hosted publicly with your private key.
+    this.estimator_ws = `wss://estimatorlab.com/ws/<your-key-here-for private hosting>`;
 
     let rps = this;
 
     // The depth of the human play history used to make predictions (# X variables for predictor).
     this.HISTORY_DEPTH = 4;
-    // History of plays made by AI, for all of time. (Human history is this.premonition.history.)
+    // History of plays made by AI, for all of time. (Human history is this.prediction.history.)
     // [0] is the first play, and so on.
     // Note that the next AI play is determined immediately once the human makes a play, so the AI is
     // generally ahead by one play.
@@ -74,7 +77,7 @@ class RPS extends Vue {
       rps.predictionCB(preds, info);
     }
 
-    this.premonition = new Premonition(4, true, this.estimator_ws, predictionCB, wsReady);
+    this.prediction = new Premonition(4, true, this.estimator_ws, predictionCB, wsReady);
 
     //wsReady();
   }
@@ -98,7 +101,7 @@ class RPS extends Vue {
   // The human has played. Conduct the contest.
   determineWinner(human_index) {
     // Update state.
-    this.premonition.pushValue(human_index);
+    this.prediction.pushValue(human_index);
     let ai_index = this.ai_history[this.ai_history.length - 1];
     let winner = this.winner(human_index, ai_index);
     this.wins[winner]++;
@@ -149,7 +152,7 @@ class RPS extends Vue {
     this.ready = false;
     $("#AI-player .hand-container").removeClass("chosen");
     // Predict human play.
-    if (! this.premonition.predict()) {
+    if (! this.prediction.predict()) {
       this.predictionCB(this._manufacturedPrediction(this.randomHandIndex()), null);
     }
   }
