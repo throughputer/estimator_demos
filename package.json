@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ThroughPuter Inc.",
-  "license": "BSD-3-Clause",
+  "license": "UNLICENSED",
   "dependencies": {
     "estimator_lib": "git+https://github.com/throughputer/estimator_lib.git"
   }

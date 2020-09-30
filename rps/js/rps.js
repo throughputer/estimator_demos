@@ -1,3 +1,4 @@
+// Copyright © ThroughPuter, Inc. Patents issued and pending. All rights reserved.
 
 // A Rock-Paper-Scissors demo game.
 
