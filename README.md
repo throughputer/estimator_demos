@@ -10,7 +10,7 @@ This package use npm (Node.js Package Manager). With npm installed, run `npm ins
 
 ### Running the Demo
 
-A live version of this demo can be found [here](https://www.estimatorlab.com).
+A live version of this demo and others can be found [here](https://www.estimatorlab.com).
 
 To run the demo locally, simply open the `index.html` file in your web browser (after [installation](#Installation), above). For example, use URL: `file:///path-to-repo-dir/rps/index.html`.
 
