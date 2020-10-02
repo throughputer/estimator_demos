@@ -77,7 +77,7 @@ class RPS extends Vue {
       rps.predictionCB(preds, info);
     }
 
-    this.prediction = new Premonition(4, true, this.estimator_ws, predictionCB, wsReady);
+    this.prediction = new Prediction(4, true, this.estimator_ws, predictionCB, wsReady);
 
     //wsReady();
   }
