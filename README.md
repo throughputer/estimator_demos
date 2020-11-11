@@ -1,8 +1,8 @@
-# ThroughPuter, Inc. Estimator Microservice Demo Applications
+# ThroughPuter Estimator Microservice Demo Applications
 
 *Copyright © ThroughPuter, Inc. Patents issued and pending. All rights reserved.*
 
-Demo applications utilizing the [ThroughPuter Inc.](http://www.throughputer.com) [Estimator microservice](https://www.estimatorlab.com).
+Demo applications utilizing the [ThroughPuter](http://www.throughputer.com) [Estimator microservice](https://www.estimatorlab.com).
 
 ## Installation
 
